@@ -11,4 +11,5 @@ func spawn_tp_part():
 	var inst = load("res://particles/playertp.tscn").instance()
 	inst.position = player.global_position
 	inst.rotation = player.global_rotation
+	inst.get_child(0).emitting = true
 	add_child(inst)

@@ -14,27 +14,33 @@ curve = SubResource( 3 )
 
 [sub_resource type="ParticlesMaterial" id=5]
 emission_shape = 2
-emission_box_extents = Vector3( 36, 16, 1 )
+emission_box_extents = Vector3( 16, 36, 1 )
 flag_disable_z = true
-spread = 180.0
+spread = 35.0
 gravity = Vector3( 0, 0, 0 )
-initial_velocity = 20.0
+initial_velocity = 100.0
 initial_velocity_random = 0.5
-orbit_velocity = 0.1
+orbit_velocity = 0.0
 orbit_velocity_random = 0.2
 damping = 5.0
 angle = 180.0
 angle_random = 1.0
-scale = 2.5
+scale = 5.0
 scale_random = 0.5
 scale_curve = SubResource( 4 )
 color_ramp = SubResource( 2 )
 hue_variation = 0.03
 hue_variation_random = 0.4
 
-[node name="playertp" type="Particles2D"]
-amount = 200
+[node name="Node2D" type="Node2D"]
+
+[node name="playertp" type="Particles2D" parent="."]
+rotation = 1.5708
+emitting = false
+amount = 50
+lifetime = 0.3
 one_shot = true
+explosiveness = 0.5
 process_material = SubResource( 5 )
 
 [node name="Timer" type="Timer" parent="."]
